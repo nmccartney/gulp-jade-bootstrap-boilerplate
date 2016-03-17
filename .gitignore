@@ -40,5 +40,5 @@ bower_components
 .DS_Store
 Thumbs.db
 
-/build/
+/dist/
 /tmp/

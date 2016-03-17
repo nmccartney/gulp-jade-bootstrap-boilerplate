@@ -1,0 +1,60 @@
+{
+  "name": "gulp-jade-scss-bootstrap-boilerplate",
+  "version": "1.0.0",
+  "description": "This is yet another front-end framework. This project makes use of Gulp, Jade, and SCSS.",
+  "private": true,
+  "scripts": {
+    "start": "node ./server/server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "babelify": "^5.0.4",
+    "basic-auth": "^1.0.1",
+    "bootstrap-sass": "^3.3.5",
+    "breakpoint-sass": "^2.6.1",
+    "browser-sync": "^2.2.3",
+    "browserify": "^10.2.4",
+    "browsernizr": "^1.1.0",
+    "del": "^1.2.1",
+    "errorhandler": "^1.3.4",
+    "express": "^4.12.3",
+    "factor-bundle": "^2.4.1",
+    "file": "^0.2.2",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-eslint": "^0.15.0",
+    "gulp-filter": "^2.0.2",
+    "gulp-jade": "^1.0.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-open": "^0.3.2",
+    "gulp-plumber": "^0.6.6",
+    "gulp-release-tasks": "0.0.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-sass": "^1.3.3",
+    "gulp-scss-lint": "^0.2.0",
+    "gulp-scss-lint-stylish": "^0.1.3",
+    "gulp-size": "^1.2.2",
+    "gulp-sourcemaps": "^1.5.0",
+    "gulp-tap": "^0.1.3",
+    "gulp-uglify": "^1.2.0",
+    "jquery": "^2.1.4",
+    "mkdirp": "^0.5.0",
+    "morgan": "^1.5.2",
+    "picturefill": "^3.0.1",
+    "require-dir": "^0.1.0",
+    "run-sequence": "^1.1.0",
+    "slash": "^1.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "engines": {
+    "node": "5.0",
+    "npm": "2.x"
+  },
+  "devDependencies": {
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.2.0"
+  }
+}
