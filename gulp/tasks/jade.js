@@ -3,6 +3,7 @@ var gulp             = require("gulp"),
     run              = require("run-sequence"); // run gulp tasks in sequence;
     plumber          = require("gulp-plumber"),       // error trapping so an error doesn't kill Gulp;
     notify           = require("gulp-notify"),
+    browserSync   = require("browser-sync"),             // inform the browser what's going on;
     jade             = require("gulp-jade"),                   // translate jade into HTML;
     rename           = require("gulp-rename"),        // allows us to rename files;
     compileConfig    = {};  
@@ -108,5 +109,9 @@ gulp.task("jade:pages:compile", function () {
             path.dirname  = "/";
         }))
         // finally put the compiled HTML file in the appropriate folder;
-        .pipe(gulp.dest(config.pages.dest.dist));
+        .pipe(gulp.dest(config.pages.dest.dist))
+        // refresh browser
+        .pipe(browserSync.reload({
+            "stream": true
+        }));
 });

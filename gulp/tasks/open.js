@@ -16,6 +16,7 @@ gulp.task("open", function (callback) {
 gulp.task("open:dist", function () {
     gulp.src(config.src)
         .pipe(open("", {
-            "url": config.url.dist
+            "url": config.url.dist,
+            "app": config.browser
         }));
 });

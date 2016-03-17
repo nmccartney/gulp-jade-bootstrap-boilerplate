@@ -13,7 +13,8 @@ var sassTask = function () {
     return gulp.src(config.compile.dist)
     .pipe(sass())
     .pipe(concat('main.css'))
-    .pipe(gulp.dest(compileConfig.destination));
+    .pipe(gulp.dest(compileConfig.destination))
+    .pipe(browserSync.reload({stream:true}));
 };
 var sassTaskDev = function () {
     return sassTask()

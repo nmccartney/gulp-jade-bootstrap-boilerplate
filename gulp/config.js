@@ -15,23 +15,26 @@ module.exports = {
     "open": {
         // file to trigger gulp stream;
         // we don't do anything with this file, it's just needed for a gulp stream;
-        "src": src + "/pages/_short-documentation/dist/page.jade",
+        "src":  "./package.json",
         // URL to open;
         "url": {
-            "dist": "http://" + server + ":" + port + "/" + dist + "/index.html",
-        }
+            "dist": "http://" + server + ":" + port + "/" + "html/hello-world.html",
+        },
+        "browser": "google chrome"
     },
     // web server and synchronised browser testing;
     "browsersync": {
         // configure what gets served;
         "server": {
-            "baseDir": "./",   // set the root to be the base, this way we can go to docs, and build;
+            "baseDir": dist,   // set the root to be the base, this way we can go to docs, and build;
             "directory": true, // enable directory browsing;
             "routes": {
                 "/node_modules": "node_modules"
             }
         },
+        "debugInfo": false,
         "open": false,
+        "hostnameSuffix": ".xip.io",
         // configure the URL to access the server;
         "host": server,
         "port": port
