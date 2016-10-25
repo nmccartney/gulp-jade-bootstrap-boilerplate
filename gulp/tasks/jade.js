@@ -6,6 +6,7 @@ var gulp             = require("gulp"),
     browserSync   = require("browser-sync"),             // inform the browser what's going on;
     jade             = require("gulp-jade"),                   // translate jade into HTML;
     rename           = require("gulp-rename"),        // allows us to rename files;
+    content        = require("../helpers/data-content.js"),
     compileConfig    = {};  
 
 gulp.task("jade", function (callback) {
@@ -76,6 +77,28 @@ gulp.task("jade:pages:dist", function (callback) {
     );
 });
 
+// build the documentation pages for each module;
+gulp.task("jade:modules", function () {
+    // we'll use this config for two jade functions;
+    var jadeConfig = {
+        "pretty": "    ",
+        "compileDebug": true,
+        "locals": {
+            "json": content() // bring in JSON files as a "locals.json" variable in Jade;
+        }
+    };
+
+    return gulp.src(config.modules.module)
+    // add plumber for error catching;
+        .pipe(plumber({
+            // errorHandler: handleErrors
+        }))
+        // compile the jade;
+        // cf. http://jade-lang.com/api/
+        .pipe(jade(jadeConfig));
+});
+
+
 // compile HTML;
 // default state will compile to the dist folder, but the above tasks can change the config;
 gulp.task("jade:pages:compile", function () {
@@ -100,7 +123,7 @@ gulp.task("jade:pages:compile", function () {
             "pretty": "    ",
             "compileDebug": true,
             "locals": {
-                // "json": content() // bring in JSON files as a "locals.json" variable in Jade;
+                "json": content() // bring in JSON files as a "locals.json" variable in Jade;
             }
         }))
         // rename the HTML file;
